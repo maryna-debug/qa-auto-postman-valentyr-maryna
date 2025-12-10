@@ -1,97 +1,139 @@
-# QA-Automation API Tests (Postman) — Valentyr Maryna
+# QA Automation API Tests (Postman) — Valentyr Maryna
 
-This repository contains a complete Postman project designed for API testing.  
-It includes a structured API collection, separate Dev/Prod environments, and fully implemented Data-Driven Tests (DDT) using JSON files.
+This repository contains a complete Postman-based API testing project.  
+It includes a structured test collection, Dev/Prod environments, and fully implemented Data-Driven Tests (DDT) using JSON data files.
+
+The project was created as part of an API testing automation assignment and is suitable for portfolio use.
 
 ---
 
-## What’s Included
+## Overview
 
-### API Collection
-A full test suite covering:
-- User registration (signup)
-- Login and session handling
-- Profile update and validation
-- Car and expense management
-- Negative validation scenarios
-- Automated cleanup
+The collection tests core functionality of a demo vehicle-management API, including:
 
-### Environments
-Two separate Postman environments:
-- QA Auto-Dev
-- QA Auto-Prod
+- User registration (signup)  
+- User login and session creation  
+- Profile retrieval and update  
+- Validation of incorrect input  
+- Cars and expenses endpoints  
+- Cleanup (user deletion)  
+- Data-Driven Tests for signup and profile
 
-Both environments contain `baseUrl` and required variables.
+All tests are implemented using Postman's built-in JavaScript testing framework (`pm.*`).
 
-### Test Data (DDT)
-JSON files used for data-driven tests:
-- `signup_test_data_valentyr_maryna.json`  
-- `profile_test_data_valentyr_maryna.json`
+---
 
-Each contains positive and negative scenarios.
+## Project Structure
+
+The repository contains three main folders:
+
+- **collection/** — Postman collection with all requests and automated tests  
+- **environments/** — Dev and Prod environment files used to switch API base URLs  
+- **data/** — JSON files for Data-Driven Testing (signup and profile flows)
+
+Environment file names used in this project:
+
+- `QA Auto-Dev.Valentyr_Maryna3`  
+- `QA Auto-Prod.Valentyr_Maryna3`  
+
+These should be imported directly into Postman.
+
+---
+
+## Data-Driven Testing (DDT)
+
+Two separate DDT modules are implemented:
+
+### **Signup DDT**
+JSON file: `signup_test_data_valentyr_maryna.json`  
+Covers:
+- Empty fields  
+- Invalid emails  
+- Valid signup  
+- Expected responses (201 or 400)
+
+### **Profile DDT**
+JSON file: `profile_test_data_valentyr_maryna.json`  
+Covers:
+- Invalid names  
+- Invalid date formats  
+- Valid profile update  
+- Expected responses (200 or 500)
+
+Postman tests read expected values using `pm.iterationData.get()`.
 
 ---
 
 ## How to Run the Tests
 
-### 1. Import the project
-- Import the collection file
-- Import both environment files
+### 1. Import project files
+In Postman:
+1. Import the collection from `/collection`
+2. Import both environments from `/environments`
+3. Import data files only when running DDT
 
-### 2. Run the main flow (without DDT)
-1. Select environment:  
-   - QA Auto-Dev **or**  
-   - QA Auto-Prod  
-2. Run the entire collection  
-This performs the complete flow: signup → login → profile → cars → cleanup.
+---
+
+### 2. Run the main test flow (no DDT)
+1. Select environment:
+   - `QA Auto-Dev.Valentyr_Maryna3` or  
+   - `QA Auto-Prod.Valentyr_Maryna3`
+2. Run the entire collection in Runner **without** selecting a data file  
+This performs:
+- Setup  
+- Signup  
+- Login  
+- Profile tests  
+- Car/expense tests  
+- Cleanup  
 
 ---
 
 ### 3. Run Signup DDT
-1. Open Postman Runner  
+1. Open Runner  
 2. Select data file: `signup_test_data_valentyr_maryna.json`  
-3. Enable folder **7-Signup DDT**  
-4. Disable **8-Profile DDT**  
-5. Run the test — each row in the JSON becomes an iteration.
+3. Enable folder **7 – Signup DDT**  
+4. Disable folder **8 – Profile DDT**  
+5. Run  
 
 ---
 
 ### 4. Run Profile DDT
-1. Open Postman Runner  
+1. Open Runner  
 2. Select data file: `profile_test_data_valentyr_maryna.json`  
-3. Enable **8-Profile DDT**  
-4. Disable **7-Signup DDT**  
-5. Run the test — the flow validates profile fields and positive update.
+3. Enable folder **8 – Profile DDT**  
+4. Disable folder **7 – Signup DDT**  
+5. Run  
 
 ---
 
-## What the Tests Cover
-- Positive and negative signup
-- Session creation (signin)
-- Profile validation (required fields, invalid dates, formats)
-- Successful profile update
-- Car and expense operations
-- Cleanup (user deletion)
-- Assertions on:
-  - Status codes  
-  - Response structure  
-  - Error messages  
-  - Updated fields  
-- DDT using external JSON files
+## What the Tests Validate
+
+- Correct status codes (200, 201, 400, 500)  
+- Error messages for invalid data  
+- Successful profile updates (name, lastName, dateOfBirth)  
+- Response structure (`status`, `message`, `data`)  
+- Session cookie handling  
+- Full happy-path API flow  
+- Cleanup ensures repeatable, isolated test runs  
 
 ---
 
-## Why This Project Works Well for a Portfolio
-- Demonstrates API testing skills with Postman
-- Uses environments professionally (Dev/Prod separation)
-- Shows understanding of DDT with iteration data
-- Contains clean structure and readable tests
-- Easy for instructors and recruiters to import and run
-- Reflects real testing workflow with setup and cleanup
+## Tools & Skills Demonstrated
+
+- Postman API testing  
+- Environments (Dev/Prod separation)  
+- Data-Driven Testing (DDT)  
+- JavaScript test scripts (`pm.*`)  
+- Iteration data validation  
+- Request organization & folder structure  
+- API negative + positive testing  
 
 ---
 
 ## Author
+
 **Valentyr Maryna**  
-API & QA Testing  
-Postman · JSON · DDT · Environments · Assertions
+QA Manual & API Testing  
+Postman · JSON · DDT · Assertions · Test Design · Dev/Prod Environments
+
