@@ -1,0 +1,23 @@
+[
+    {
+        "email": "",
+        "password": "Qwerty12345",
+        "name": "",
+        "lastName": "Test",
+        "expectedStatus": 400
+    },
+    {
+        "email": "a",
+        "password": "Qwerty12345",
+        "name": "Maryna",
+        "lastName": "",
+        "expectedStatus": 400
+    },
+    {
+        "email": "RANDOM",
+        "password": "Qwerty12345",
+        "name": "Maryna",
+        "lastName": "Test",
+        "expectedStatus": 201
+    }
+]

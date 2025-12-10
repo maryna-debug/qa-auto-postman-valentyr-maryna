@@ -1,0 +1,16 @@
+{
+	"id": "97dc51f1-9822-4550-b81c-1797a23cc8ab",
+	"name": "QA Auto-Prod",
+	"values": [
+		{
+			"key": "baseUrl",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"color": null,
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2025-12-10T20:28:56.594Z",
+	"_postman_exported_using": "Postman/11.75.1"
+}

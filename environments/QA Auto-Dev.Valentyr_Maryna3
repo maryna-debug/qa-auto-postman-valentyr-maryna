@@ -1,0 +1,16 @@
+{
+	"id": "dbea17e8-c8a2-49f5-80e7-b8f826413918",
+	"name": "QA Auto-Dev",
+	"values": [
+		{
+			"key": "baseUrl",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"color": null,
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2025-12-10T20:27:50.604Z",
+	"_postman_exported_using": "Postman/11.75.1"
+}

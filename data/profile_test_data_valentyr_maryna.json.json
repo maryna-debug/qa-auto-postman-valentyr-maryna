@@ -1,0 +1,26 @@
+[
+    {
+        "name": "",
+        "lastName": "ValentyrUpdated",
+        "dateBirth": "1995-05-10T00:00:00.000Z",
+        "expectedStatus": 500
+    },
+    {
+        "name": "MarynaProfile",
+        "lastName": "",
+        "dateBirth": "1995-05-10T00:00:00.000Z",
+        "expectedStatus": 500
+    },
+    {
+        "name": "MarynaProfile",
+        "lastName": "ValentyrUpdated",
+        "dateBirth": "not-a-date",
+        "expectedStatus": 500
+    },
+    {
+        "name": "MarynaProfile",
+        "lastName": "ValentyrUpdated",
+        "dateBirth": "1995-05-10T00:00:00.000Z",
+        "expectedStatus": 200
+    }
+]
